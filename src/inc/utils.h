@@ -15,7 +15,9 @@
 
 #include <stdlib.h>
 
-int mkpath(mode_t mode, const char* fmt, ...);
+//int mkpath(mode_t mode, const char* fmt, ...);
+int mkpath(int mode, const char *fmt, ...);
+int mkpath_for_file(int mode, const char *filepath);
 
 #endif /* UTILS_H */
 

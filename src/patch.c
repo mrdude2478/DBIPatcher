@@ -81,8 +81,15 @@ cleanup:
 int patch(const char * dbi, const char * patch, uint32_t slot, const char * path_out) {
     lf_n("patching '%s' slot %u with '%s' to '%s'", dbi, slot, patch, path_out);
     
+    /*
     if(mkpath(0755, "%s", path_out) != 0) {
         lf_e("failed to create directory '%s'", path_out);
+        return EXIT_FAILURE;
+    }
+    */
+    
+    if (mkpath_for_file(0755, path_out) != 0) {
+    	lf_e("failed to create directory '%s'", path_out);
         return EXIT_FAILURE;
     }
     

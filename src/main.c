@@ -55,13 +55,13 @@ void print_help(const char *program_name) {
     printf("     %s --extract DBI.nro --output DBI_extract" CRLF, program_name);
 
     printf(CRLF "  # Convert extracted payload 6.bin into an editable text file" CRLF);
-    printf("     %s --convert DBI_extract/6.bin --output translation.txt --keys keylist.txt" CRLF, program_name);
+    printf("     %s --convert DBI_extract/rec6.bin --output translation.txt --keys keylist.txt" CRLF, program_name);
 
     printf(CRLF "  # Convert edited translations back into binary form" CRLF);
-    printf("     %s --convert translation.txt --output DBI_extract/6.bin --keys keylist.txt" CRLF, program_name);
+    printf("     %s --convert rec6.810.en.txt --output DBI_extract/rec6.bin --keys keylist.txt" CRLF, program_name);
 
-    printf(CRLF "  # Apply patch 6.bin to DBI.nro at slot 6 and write patched binary" CRLF);
-    printf("     %s --patch 6.bin --binary DBI.nro --slot 6 --output DBI.patched.nro" CRLF, program_name);
+    printf(CRLF "  # Apply patch rec6.bin to DBI.nro at slot 6 and write patched binary" CRLF);
+    printf("     %s --patch DBI_extract/rec6.bin --binary DBI.nro --slot 6 --output DBI.patched.nro" CRLF, program_name);
 }
 
 static struct option long_options[] = {

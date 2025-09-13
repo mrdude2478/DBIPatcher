@@ -153,6 +153,7 @@ static int convert_pack(MemFile * in, FILE * out, FILE * out_keys) {
 int convert(const char * path_in, const char * path_out, const char * path_out_keys) {
     lf_n("converting '%s' to '%s'", path_in, path_out);
     
+    /*
     if(mkpath(0755, "%s", path_out) != 0) {
         lf_e("failed to create directory '%s'", path_out);
         return EXIT_FAILURE;
@@ -163,6 +164,18 @@ int convert(const char * path_in, const char * path_out, const char * path_out_k
             lf_e("failed to create directory '%s'", path_out_keys);
             return EXIT_FAILURE;
         }
+    }
+    */
+    if (mkpath_for_file(0755, path_out) != 0) {
+    	lf_e("failed to create directory '%s'", path_out);
+        return EXIT_FAILURE;
+    }
+    
+    if (path_out_keys) {
+    	if (mkpath_for_file(0755, path_out_keys) != 0) {
+    		lf_e("failed to create directory '%s'", path_out_keys);
+            return EXIT_FAILURE;
+      }
     }
     
     MemFile * in = mf_init_path(path_in);
