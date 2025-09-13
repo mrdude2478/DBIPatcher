@@ -86,16 +86,16 @@ Options:
 
 Examples:
   # Extract payloads from DBI.nro into folder DBI_extract
-     ./bin/dbipatcher --extract DBI.nro --output DBI_extract
+     dbipatcher --extract DBI.810.ru.nro --output DBI_extract
 
   # Convert extracted payload 6.bin into an editable text file
-     ./bin/dbipatcher --convert DBI_extract/6.bin --output translation.txt --keys keylist.txt
+     dbipatcher --convert DBI_extract/rec6.bin --output translation.txt --keys keylist.txt
 
   # Convert edited translations back into binary form
-     ./bin/dbipatcher --convert translation.txt --output DBI_extract/6.bin --keys keylist.txt
+     dbipatcher --convert rec6.810.en.txt --output DBI_extract/rec6.bin --keys keylist.txt
 
   # Apply patch 6.bin to DBI.nro at slot 6 and write patched binary
-     ./bin/dbipatcher --patch 6.bin --binary DBI.nro --slot 6 --output DBI.patched.nro
+     dbipatcher --patch DBI_extract/rec6.bin --binary DBI.810.ru.nro --slot 6 --output DBI.patched.nro
 ```
 
 ## Legal Notice
